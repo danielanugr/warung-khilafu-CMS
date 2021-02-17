@@ -6,7 +6,7 @@
           <div class="card card-signin my-5">
             <div class="card-body">
               <h5 class="card-title text-center">Sign In</h5>
-              <form class="form-signin" @submit.prevent="">
+              <form class="form-signin" @submit.prevent="login">
                 <div class="form-label-group">
                   <input
                     type="email"
@@ -38,14 +38,10 @@
                     class="custom-control-input"
                     id="customCheck1"
                   />
-                  <label class="custom-control-label" for="customCheck1"
-                    >Remember password</label
-                  >
                 </div>
                 <button
                   class="btn btn-lg btn-primary btn-block text-uppercase"
                   type="submit"
-                  @click="login"
                 >
                   Sign in
                 </button>
@@ -67,6 +63,7 @@
 
 <script>
 import axios from '../api/axios'
+
 export default {
   name: 'LoginForm',
   data () {
@@ -77,6 +74,7 @@ export default {
   },
   methods: {
     login () {
+      console.log(this.emailLogin, this.passwordLogin)
       axios
         .post('/login', {
           email: this.emailLogin,
@@ -97,6 +95,11 @@ export default {
 :root {
   --input-padding-x: 1.5rem;
   --input-padding-y: 0.75rem;
+}
+
+body {
+  background: #007bff;
+  background: linear-gradient(to right, #0062e6, #33aeff);
 }
 
 .card-signin {
@@ -208,6 +211,18 @@ export default {
     display: none;
   }
   .form-label-group input::-ms-input-placeholder {
+    color: #777;
+  }
+}
+
+/* Fallback for IE
+-------------------------------------------------- */
+
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  .form-label-group > label {
+    display: none;
+  }
+  .form-label-group input:-ms-input-placeholder {
     color: #777;
   }
 }
