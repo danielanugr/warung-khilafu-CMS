@@ -1,7 +1,7 @@
 <template>
   <a-layout id="Navbar">
     <Navbar />
-    <a-layout-content>
+    <a-layout-content style="overflow: auto">
       <hr />
       <h2 class="">List of Products</h2>
       <hr />

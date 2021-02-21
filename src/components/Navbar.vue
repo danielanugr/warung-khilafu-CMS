@@ -17,7 +17,7 @@
           Add Product
         </a-menu-item>
       </a-sub-menu>
-      <a-sub-menu key="category">
+      <!-- <a-sub-menu key="category">
         <span slot="title">
           <a-icon type="tags" theme="filled" />Category
         </span>
@@ -27,7 +27,7 @@
         <a-menu-item key="addCategory">
           <router-link to="/categories/add" />Add Category</a-menu-item
         >
-      </a-sub-menu>
+      </a-sub-menu> -->
       <a-sub-menu key="banner">
         <span slot="title"
           ><a-icon type="schedule" theme="filled" />Banner</span

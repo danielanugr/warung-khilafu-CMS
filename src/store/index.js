@@ -40,6 +40,11 @@ export default new Vuex.Store({
         })
         .catch(err => {
           console.log(err)
+          Vue.swal.fire({
+            icon: 'error',
+            title: 'Ooops...',
+            text: 'Wrong Email/Password'
+          })
         })
     },
     logout (context) {
